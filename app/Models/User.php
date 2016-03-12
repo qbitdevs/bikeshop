@@ -8,6 +8,4 @@ class User extends Model
 {
     protected $table = 'user';
     protected $fillable = [ 'age', 'avatar', 'email', 'gender', 'is_admin', 'name', 'password', 'created_at', 'updated_at' ];
-
-
 }

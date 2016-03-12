@@ -16,5 +16,4 @@ class Order_product_detail extends Model
     public function orders() {
         return $this->hasMany('App\Models\Order');
     }
-
 }

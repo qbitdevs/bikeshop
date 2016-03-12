@@ -15,7 +15,10 @@ class BikeStore
      */
     public function handle($request, Closure $next)
     {   
+<<<<<<< HEAD
         print_r($request->path());
+=======
+>>>>>>> Inicializacion del proyecto hecha por jhonatan
         return $next($request);
     }
 }
