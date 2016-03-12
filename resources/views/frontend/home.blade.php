@@ -36,8 +36,12 @@
         </style>
     </head>
     <body>
+
         <div class="container">
             <div class="content">
+                @if( session('message'))
+                    <p class="alert alert-success">{!!session('message')!!}</p>
+                @endif
                 <div class="title">Home</div>
             </div>
         </div>
