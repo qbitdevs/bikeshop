@@ -21,7 +21,7 @@ class CreatePaymentTable extends Migration
             $table->string('payment_date');
 
             // Foreign keys
-            $table->unsignedInteger('bank_id');
+            $table->integer('bank_id')->unsigned();
             $table->foreign('bank_id')->references('id')->on('category');
             $table->integer('order_id')->unsigned();
             $table->foreign('order_id')->references('id')->on('category');

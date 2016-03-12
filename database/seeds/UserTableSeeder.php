@@ -12,16 +12,14 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-
-    	$user = new User(array(
-            'age' => 24,
-			'avatar' => "",
-            'email' => 'asdjklnsad@gmail.com',
-            'gender'  => 'male',
-            'is_admin' => 0,
-            'name' => str_random(10),
-            'password' => "7c4a8d09ca3762af61e59520943dc26494f8941b",
-        ));
+    	$user = new User();
+        $user->age = 24;
+        $user->avatar = "";
+        $user->email = 'asdjklnsad@gmail.com';
+        $user->gender  = 'male';
+        $user->is_admin = 0;
+        $user->name = str_random(10);
+        $user->password = "7c4a8d09ca3762af61e59520943dc26494f8941b";
 
         $user->timestamps = true;
 
