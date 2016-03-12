@@ -1,1 +1,2 @@
-# bike_store
+# BikeStore
+Test project for job
