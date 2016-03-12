@@ -16,12 +16,15 @@ Route::group(['middleware' => ['web', 'auth.store']], function () {
 	Route::get('/admin/products', 'Backend\ProductController@show');
 
 
-	// Frontend Main Views
+	// Frontend Main Views GET
     Route::get('/', 'Frontend\MainController@index');
     Route::get('/home', 'Frontend\MainController@index');
     Route::get('/login', 'Frontend\MainController@login');
     Route::get('/categories', 'Frontend\MainController@categories');
     Route::get('/register', 'Frontend\MainController@register');
+    
+    // Frontend Main Views POST
+    Route::post('/register', 'Frontend\MainController@store');
 
     // Frontend Order Views
     Route::get('/order/{id}', 'Frontend\OrderController@detail');

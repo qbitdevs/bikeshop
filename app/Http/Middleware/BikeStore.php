@@ -15,7 +15,7 @@ class BikeStore
      */
     public function handle($request, Closure $next)
     {   
-        print_r($request->path());
+        //dump($request);
         return $next($request);
     }
 }

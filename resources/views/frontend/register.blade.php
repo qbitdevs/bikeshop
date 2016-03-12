@@ -1,45 +1,56 @@
-<?php ?>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('app')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('content')
+    <div class="container-fluid">
+        @if( ! empty($error_message))
+            <p class="alert alert-danger">{!!$error_message!!}</p>
+        @endif
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Register</div>
+        {!! Form::open(array('url' => '/register', 'method' => 'post')) !!}
+            <div class="form-group">
+                {!! Form::label('name', 'Nombre') !!}
+                {!! Form::text('name', '')!!}
+                <spam style="color:#a94442" class="help-block error-help-block">
+                    {!! $errors->first('name') !!}
+                </spam>
             </div>
-        </div>
-    </body>
-</html>
+            <div class="form-group">
+                {!! Form::label('email', 'E-Mail Address') !!}
+                {!! Form::text('email', '')!!}
+                <spam style="color:#a94442" class="help-block error-help-block">
+                    {!! $errors->first('email') !!}
+                </spam>
+            </div>
+            <div class="form-group">
+                {!! Form::label('password', 'Contrase&ntilde;a') !!}
+                {!! Form::password('password', '')!!}
+                <spam style="color:#a94442" class="help-block error-help-block">
+                    {!! $errors->first('password') !!}
+                </spam>
+            </div>
+            <div class="form-group">
+                {!! Form::label('password_confirm', 'Confirme su contrase&ntilde;a') !!}
+                {!! Form::password('password_confirm', '')!!}
+                <spam style="color:#a94442" class="help-block error-help-block">
+                    {!! $errors->first('password_confirm') !!}
+                </spam>
+            </div>
+            <div class="form-group">
+                {!! Form::label('age', 'Edad') !!}
+                {!! Form::selectRange('age', 18, 90)!!}
+                <spam style="color:#a94442" class="help-block error-help-block">
+                    {!! $errors->first('age') !!}
+                </spam>
+            </div>
+            <div class="form-group">
+                {!! Form::label('Genero', 'G&eacute;nero') !!}
+                {!! Form::select('gender', array('Hombre' => 'Hombre', 'Mujer' => 'Mujer'))!!}
+                <spam style="color:#a94442" class="help-block error-help-block">
+                    {!! $errors->first('gender') !!}
+                </spam>
+            </div>
+            {!! Form::submit('Registrar') !!}
+        {!! Form::close() !!}
+        {!! $validator !!}
+    </div>
+@endsection
