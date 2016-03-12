@@ -1,7 +1,7 @@
 <?php
 
 Route::group(['middleware' => ['web', 'auth.store']], function () {
-	
+
 	// Backend Index
 	Route::get('/admin', 'Backend\AdminController@index');
 
@@ -22,7 +22,10 @@ Route::group(['middleware' => ['web', 'auth.store']], function () {
     Route::get('/login', 'Frontend\MainController@login');
     Route::get('/categories', 'Frontend\MainController@categories');
     Route::get('/register', 'Frontend\MainController@register');
-    
+    Route::get('/about_us', 'Frontend\MainController@about_us');
+    Route::get('/contact', 'Frontend\MainController@contact');
+    Route::post('/send_contact', 'Frontend\MainController@contact');
+
     // Frontend Main Views POST
     Route::post('/register', 'Frontend\MainController@store');
 

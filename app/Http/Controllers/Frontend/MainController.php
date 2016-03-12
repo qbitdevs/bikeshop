@@ -50,7 +50,7 @@ class MainController extends Controller
         $validator = JsValidator::make($validationRules);
         $params = $request->all();
         $validate = Validator::make($params, $validationRules);
-        
+
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate);
             exit();
@@ -70,8 +70,23 @@ class MainController extends Controller
                 return redirect('/home')->with(['message'=>'Se ha registrado el usuario exitosamente']);
             } else {
                  return view('frontend/register')->with(['validator' => $validator,'error_message'=>'Esta direcci&oacute;n de correo ya ha sido usada']);
-            }    
+            }
         }
+    }
+
+    public function about_us() {
+    	return view('frontend/about_us');
+    }
+
+    public function contact() {
+    	return view('frontend/contact');
+    }
+
+    public function send_contact(){
+      $contact_name = $_POST['name']
+      $contact_mail = $_POST['mail']
+      $contact_message = $_POST['message']
+      return $contact_name+" "$contact_mail+" "$contact_message
     }
 
 }
