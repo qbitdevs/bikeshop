@@ -86,7 +86,7 @@ class MainController extends Controller
       $contact_name = $_POST['name']
       $contact_mail = $_POST['mail']
       $contact_message = $_POST['message']
-      return $contact_name+" "$contact_mail+" "$contact_message
+      return "hola"
     }
 
 }
